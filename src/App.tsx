@@ -5,7 +5,29 @@ import {PageTwo} from "./components/pages/PageTwo";
 import {PageThree} from "./components/pages/PageThree";
 import {BrowserRouter, NavLink, Route, Routes, Navigate, Link} from "react-router-dom";
 import {Error404} from "./components/pages/Error404";
-import S from './Navstyles.module.css'
+import S from "./Navstyles.module.css"
+
+import styled from "styled-components";
+const NavWrapper = styled.div`
+margin-left: 10px;
+  font-size: 20px;
+  & > a {
+    text-decoration: none;
+    color: #282c34;
+  }
+  & > a.active{
+    color: #7fb8f1;
+    text-decoration: underline;
+  }
+`
+const navLink = styled.div`
+  text-decoration: none;
+  color: #282c34;
+`
+const activeNavLink = styled.div`
+  color: #7fb8f1;
+  text-decoration: underline;
+`
 
 
 function App() {
@@ -16,10 +38,9 @@ function App() {
             <div className={styles.header}><h1>HEADER</h1></div>
             <div className={styles.body}>
                 <div className={styles.nav}>
-                    <NavLink to={'/1'}  className={NavActiveClass}><div>PAGE ONE</div></NavLink>
-                    <div><NavLink to={'/2'} className={NavActiveClass
-                    }>PAGE TWO</NavLink></div>
-                    <NavLink to={'/3'} className={NavActiveClass}><div>PAGE THREE</div></NavLink>
+                    <NavWrapper><NavLink to={'/1'} >PAGE ONE</NavLink></NavWrapper>
+                    <NavWrapper><NavLink to={'/2'} >PAGE TWO</NavLink></NavWrapper>
+                    <NavLink to={'/3'} className={NavActiveClass}><NavWrapper>PAGE THREE</NavWrapper></NavLink>
                 </div>
                 <div className={styles.content}>
 
