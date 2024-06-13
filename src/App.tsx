@@ -20,14 +20,13 @@ margin-left: 10px;
     text-decoration: underline;
   }
 `
-const navLink = styled.div`
-  text-decoration: none;
-  color: #282c34;
-`
-const activeNavLink = styled.div`
-  color: #7fb8f1;
-  text-decoration: underline;
-`
+
+const PATH = {
+    PAGE1:'/1',
+    PAGE2:'/2',
+    PAGE3:'/3',
+} as const
+
 
 
 function App() {
@@ -38,9 +37,9 @@ function App() {
             <div className={styles.header}><h1>HEADER</h1></div>
             <div className={styles.body}>
                 <div className={styles.nav}>
-                    <NavWrapper><NavLink to={'/1'} >PAGE ONE</NavLink></NavWrapper>
-                    <NavWrapper><NavLink to={'/2'} >PAGE TWO</NavLink></NavWrapper>
-                    <NavLink to={'/3'} className={NavActiveClass}><NavWrapper>PAGE THREE</NavWrapper></NavLink>
+                    <NavWrapper><NavLink to={PATH.PAGE1} >PAGE ONE</NavLink></NavWrapper>
+                    <NavWrapper><NavLink to={PATH.PAGE2} >PAGE TWO</NavLink></NavWrapper>
+                    <NavWrapper> <NavLink to={PATH.PAGE3} >PAGE THREE</NavLink></NavWrapper>
                 </div>
                 <div className={styles.content}>
 
