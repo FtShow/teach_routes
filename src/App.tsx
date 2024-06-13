@@ -5,17 +5,21 @@ import {PageTwo} from "./components/pages/PageTwo";
 import {PageThree} from "./components/pages/PageThree";
 import {BrowserRouter, NavLink, Route, Routes, Navigate, Link} from "react-router-dom";
 import {Error404} from "./components/pages/Error404";
+import S from './Navstyles.module.css'
 
 
 function App() {
+    const NavActiveClass = ({isActive}: any) =>
+        isActive ? S.activeNavLink : S.navLink
     return (
         <div>
             <div className={styles.header}><h1>HEADER</h1></div>
             <div className={styles.body}>
                 <div className={styles.nav}>
-                    <NavLink to={'/1'}><div>PAGE ONE</div></NavLink>
-                    <div><Link to={'/2'}>PAGE TWO</Link></div>
-                    <NavLink to={'/3'}><div>PAGE THREE</div></NavLink>
+                    <NavLink to={'/1'}  className={NavActiveClass}><div>PAGE ONE</div></NavLink>
+                    <div><NavLink to={'/2'} className={NavActiveClass
+                    }>PAGE TWO</NavLink></div>
+                    <NavLink to={'/3'} className={NavActiveClass}><div>PAGE THREE</div></NavLink>
                 </div>
                 <div className={styles.content}>
 
