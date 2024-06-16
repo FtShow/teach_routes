@@ -28,12 +28,12 @@ function App() {
                 </div>
                 <div className={styles.content}>
                     <Routes>
-                        <Route path={'/'} element={<Navigate to={'/page1'}/>}/>
+                        <Route path={'/'} element={<Navigate to={'/adidas'}/>}/>
 
                         <Route path={PATH.PAGE1} element={<Adidas/>}/>
                         <Route path={PATH.PAGE2} element={<Puma/>}/>
                         <Route path={PATH.PAGE3} element={<Abibas/>}/>
-                        <Route path={'/adidas/:id'} element={<Model/>}/>
+                        <Route path={'/:model/:id'} element={<Model/>}/>
 
                         <Route path={'/*'} element={<Error404/>}/>
                     </Routes>
