@@ -36,11 +36,6 @@ function App() {
                     {/*<Routes>*/}
                     {/*    <Route path={'/'} element={<Navigate to={PATH.PAGE1}/>}/>*/}
 
-                    {/*    <Route path={PATH.PAGE1} element={<Adidas/>}/>*/}
-                    {/*    <Route path={PATH.PAGE2} element={<Puma/>}/>*/}
-                    {/*    <Route path={PATH.PAGE3} element={<Abibas/>}/>*/}
-                    {/*    <Route path={PATH.PAGE4} element={<Prices/>}/>*/}
-
                     {/*    /!*<Route path={'/adidas/:id'} element={<Model/>}/>*!/*/}
                     {/*    <Route path={'/:model/:id'} element={<Model/>}/>*/}
 
