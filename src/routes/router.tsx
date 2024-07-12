@@ -57,6 +57,10 @@ const publicRoutes: RouteObject[] = [
         path: PATH.LOGIN,
         element: <Login/>
     },
+    {
+        path: '/',
+        element: <Navigate to={PATH.ADIDAS}/>
+    },
 ]
 const privateRoutes: RouteObject[] = [
 

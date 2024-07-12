@@ -1,14 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from "./components/Site.module.css";
-import {Adidas} from "./components/pages/Adidas";
-import {Puma} from "./components/pages/Puma";
-import {Abibas} from "./components/pages/Abibas";
-import {Navigate, NavLink, Outlet, Route, Routes} from 'react-router-dom';
-import {Error404} from "./components/pages/Error404";
-import styled from 'styled-components';
+import {NavLink, Outlet, useNavigate} from 'react-router-dom';
 import {S} from './components/pages/_styles'
-import {Model} from "./components/pages/Model";
-import {Prices} from "./components/pages/Prices";
 
 
 const PATH = {
@@ -21,6 +14,7 @@ const PATH = {
 } as const
 
 function App() {
+    const navigate = useNavigate()
     return (
         <div>
             <div className={styles.header}><h1>HEADER</h1></div>
@@ -34,6 +28,10 @@ function App() {
 
                 </div>
                 <div className={styles.content}>
+                    <div className={styles.HorizontalNavigation}>
+                        <NavLink to={PATH.PAGE1}>HOME</NavLink>
+                    </div>
+
                     <Outlet/>
                     {/*<Routes>*/}
                     {/*    <Route path={'/'} element={<Navigate to={PATH.PAGE1}/>}/>*/}
