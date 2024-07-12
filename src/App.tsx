@@ -15,6 +15,9 @@ const PATH = {
 
 function App() {
     const navigate = useNavigate()
+    const navigateHandler = () => {
+        navigate(-1)
+    }
     return (
         <div>
             <div className={styles.header}><h1>HEADER</h1></div>
@@ -29,7 +32,10 @@ function App() {
                 </div>
                 <div className={styles.content}>
                     <div className={styles.HorizontalNavigation}>
-                        <NavLink to={PATH.PAGE1}>HOME</NavLink>
+                        <button onClick={navigateHandler} className={styles.ButtonLikeLink}>BACK</button>
+                        <NavLink onClick={navigateHandler} className={styles.LinkLikeButton}
+                                 to={PATH.PAGE1}>HOME</NavLink>
+
                     </div>
 
                     <Outlet/>
